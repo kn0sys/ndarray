@@ -9,7 +9,7 @@ or take a look at the `quickstart tutorial <./README-quick-start.md>`_.
 
 __ https://docs.rs/ndarray/
 
-|build_status|_ |crates|_ |matrix-chat|_ |irc|_
+|build_status|_ |crates|_ 
 
 .. |build_status| image:: https://github.com/rust-ndarray/ndarray/actions/workflows/ci.yaml/badge.svg
    :alt: CI build status
