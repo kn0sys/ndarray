@@ -77,8 +77,8 @@ where
     ///
     /// ```
     /// use kn0sys_ndarray::Array;
-    /// use ndarray_rand::RandomExt;
-    /// use ndarray_rand::rand_distr::Uniform;
+    /// use kn0sys_ndarray_rand::RandomExt;
+    /// use kn0sys_ndarray_rand::rand_distr::Uniform;
     ///
     /// # fn main() {
     /// let a = Array::random((2, 5), Uniform::new(0., 10.).unwrap());
@@ -100,9 +100,9 @@ where
     ///
     /// ```
     /// use kn0sys_ndarray::Array;
-    /// use ndarray_rand::RandomExt;
-    /// use ndarray_rand::rand::SeedableRng;
-    /// use ndarray_rand::rand_distr::Uniform;
+    /// use kn0sys_ndarray_rand::RandomExt;
+    /// use kn0sys_ndarray_rand::rand::SeedableRng;
+    /// use kn0sys_ndarray_rand::rand_distr::Uniform;
     /// use rand_isaac::isaac64::Isaac64Rng;
     ///
     /// # fn main() {
@@ -136,7 +136,7 @@ where
     ///
     /// ```
     /// use kn0sys_ndarray::{array, Axis};
-    /// use ndarray_rand::{RandomExt, SamplingStrategy};
+    /// use kn0sys_ndarray_rand::{RandomExt, SamplingStrategy};
     ///
     /// # fn main() {
     /// let a = array![
@@ -183,8 +183,8 @@ where
     ///
     /// ```
     /// use kn0sys_ndarray::{array, Axis};
-    /// use ndarray_rand::{RandomExt, SamplingStrategy};
-    /// use ndarray_rand::rand::SeedableRng;
+    /// use kn0sys_ndarray_rand::{RandomExt, SamplingStrategy};
+    /// use kn0sys_ndarray_rand::rand::SeedableRng;
     /// use rand_isaac::isaac64::Isaac64Rng;
     ///
     /// # fn main() {

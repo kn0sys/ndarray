@@ -1,12 +1,12 @@
 [package]
-name = "ndarray-rand"
-version = "0.15.0"
-edition = "2018"
+name = "kn0sys_ndarray_rand"
+version = "0.16.0"
+edition = "2021"
 authors = ["bluss"]
 license = "MIT OR Apache-2.0"
 
-repository = "https://github.com/rust-ndarray/ndarray"
-documentation = "https://docs.rs/ndarray-rand/"
+repository = "https://github.com/kn0sys/ndarray"
+documentation = "https://docs.rs/kn0sys-ndarray-rand/"
 readme = "README.md"
 
 description = "Constructors for randomized arrays. `rand` integration for `ndarray`."
@@ -24,5 +24,5 @@ rand_isaac = "0.4.0"
 
 [package.metadata.release]
 no-dev-version = true
-tag-name = "ndarray-rand-{{version}}"
+tag-name = "kn0sys_ndarray_rand-{{version}}"
 

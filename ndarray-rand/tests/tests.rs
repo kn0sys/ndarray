@@ -1,8 +1,8 @@
 use kn0sys_ndarray::{Array, Axis};
 
 use kn0sys_ndarray::ShapeBuilder;
-use ndarray_rand::rand_distr::Uniform;
-use ndarray_rand::{RandomExt, SamplingStrategy};
+use kn0sys_ndarray_rand::rand_distr::Uniform;
+use kn0sys_ndarray_rand::{RandomExt, SamplingStrategy};
 
 #[test]
 fn test_dim()

@@ -13,19 +13,12 @@ __ https://docs.rs/ndarray/
 
 .. |build_status| image:: https://github.com/rust-ndarray/ndarray/actions/workflows/ci.yaml/badge.svg
    :alt: CI build status
-.. _build_status: https://github.com/rust-ndarray/ndarray/actions
+.. _build_status: https://github.com/kn0sys/ndarray/actions
 
 .. |crates| image:: https://img.shields.io/crates/v/ndarray.svg
    :alt: ndarray at crates.io
-.. _crates: https://crates.io/crates/ndarray
+.. _crates: https://crates.io/crates/kn0sys-ndarray
 
-.. |matrix-chat| image:: https://img.shields.io/badge/Matrix-%23rust--sci%3Amatrix.org-lightgrey
-   :alt: Matrix chat at #rust-sci:matrix.org
-.. _matrix-chat: https://matrix.to/#/#rust-sci:matrix.org
-
-.. |irc| image:: https://img.shields.io/badge/IRC-%23rust--sci%20on%20OFTC-lightgrey
-   :alt: IRC at #rust-sci on OFTC
-.. _irc: https://webchat.oftc.net/?channels=rust-sci
 
 Highlights
 ----------
