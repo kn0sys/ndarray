@@ -94,7 +94,7 @@ default-members = [
 
 [workspace.dependencies]
 kn0sys_ndarray = { version = "0.17", path = ".", default-features = false }
-ndarray-rand = { path = "ndarray-rand" }
+kn0sys_ndarray_rand = { path = "ndarray-rand" }
 ndarray-gen = { path = "crates/ndarray-gen" }
 
 num-integer = { version = "0.1.39", default-features = false }

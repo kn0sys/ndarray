@@ -1,6 +1,6 @@
 extern crate approx;
 extern crate kn0sys_ndarray;
-extern crate ndarray_rand;
+extern crate kn0sys_ndarray_rand;
 extern crate rand;
 extern crate rand_distr;
 
@@ -14,7 +14,7 @@ use rand::{Rng, SeedableRng};
 use kn0sys_ndarray::linalg::general_mat_mul;
 use kn0sys_ndarray::prelude::*;
 use kn0sys_ndarray::{Data, LinalgScalar};
-use ndarray_rand::RandomExt;
+use kn0sys_ndarray_rand::RandomExt;
 use num_complex::Complex;
 use num_traits::{AsPrimitive, Float};
 use rand_distr::{Distribution, Normal, StandardNormal};
