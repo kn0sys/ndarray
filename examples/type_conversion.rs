@@ -4,7 +4,7 @@ use std::convert::TryFrom;
 #[cfg(feature = "approx")]
 use approx::assert_abs_diff_eq;
 #[cfg(feature = "approx")]
-use ndarray::prelude::*;
+use kn0sys_ndarray::prelude::*;
 
 #[cfg(feature = "approx")]
 fn main()

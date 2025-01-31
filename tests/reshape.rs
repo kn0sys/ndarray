@@ -1,8 +1,8 @@
-use ndarray::prelude::*;
+use kn0sys_ndarray::prelude::*;
 
 use itertools::enumerate;
 
-use ndarray::Order;
+use kn0sys_ndarray::Order;
 
 #[test]
 fn reshape()

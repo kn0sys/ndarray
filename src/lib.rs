@@ -5,8 +5,8 @@
 // <LICENSE-MIT or http://opensource.org/licenses/MIT>, at your
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
-#![crate_name = "ndarray"]
-#![doc(html_root_url = "https://docs.rs/ndarray/0.15/")]
+#![crate_name = "kn0sys_ndarray"]
+#![doc(html_root_url = "https://docs.rs/kn0sys-ndarray")]
 #![doc(html_logo_url = "https://rust-ndarray.github.io/images/rust-ndarray_logo.svg")]
 #![allow(
     unstable_name_collisions, // our `PointerExt` collides with upcoming inherent methods on `NonNull`
@@ -295,7 +295,7 @@ pub type Ixs = isize;
 ///
 /// ```
 /// // Create a three-dimensional f64 array, initialized with zeros
-/// use ndarray::Array3;
+/// use kn0sys_ndarray::Array3;
 /// let mut temperature = Array3::<f64>::zeros((3, 4, 5));
 /// // Increase the temperature in this location
 /// temperature[[2, 2, 2]] += 0.5;
@@ -370,7 +370,7 @@ pub type Ixs = isize;
 /// used to index the `Array`, making the syntax `array[[` i, j,  ...`]]`
 ///
 /// ```
-/// use ndarray::Array2;
+/// use kn0sys_ndarray::Array2;
 /// let mut array = Array2::zeros((4, 3));
 /// array[[1, 1]] = 7;
 /// ```
@@ -441,7 +441,7 @@ pub type Ixs = isize;
 /// [`.rows()`][gr] is a producer (and iterable) of all rows in an array.
 ///
 /// ```
-/// use ndarray::Array;
+/// use kn0sys_ndarray::Array;
 ///
 /// // 1. Loop over the rows of a 2D array
 /// let mut a = Array::zeros((10, 10));
@@ -450,7 +450,7 @@ pub type Ixs = isize;
 /// }
 ///
 /// // 2. Use Zip to pair each row in 2D `a` with elements in 1D `b`
-/// use ndarray::Zip;
+/// use kn0sys_ndarray::Zip;
 /// let mut b = Array::zeros(a.nrows());
 ///
 /// Zip::from(a.rows())
@@ -532,7 +532,7 @@ pub type Ixs = isize;
 /// [`.multi_slice_move()`]: ArrayViewMut#method.multi_slice_move
 ///
 /// ```
-/// use ndarray::{arr2, arr3, s, ArrayBase, DataMut, Dimension, NewAxis, Slice};
+/// use kn0sys_ndarray::{arr2, arr3, s, ArrayBase, DataMut, Dimension, NewAxis, Slice};
 ///
 /// // 2 submatrices of 2 rows with 3 elements per row, means a shape of `[2, 2, 3]`.
 ///
@@ -640,7 +640,7 @@ pub type Ixs = isize;
 ///
 /// ```
 ///
-/// use ndarray::{arr3, aview1, aview2, s, Axis};
+/// use kn0sys_ndarray::{arr3, aview1, aview2, s, Axis};
 ///
 ///
 /// // 2 submatrices of 2 rows with 3 elements per row, means a shape of `[2, 2, 3]`.
@@ -702,7 +702,7 @@ pub type Ixs = isize;
 /// `Clone` trait.
 ///
 /// ```
-/// use ndarray::{array, ArrayView1};
+/// use kn0sys_ndarray::{array, ArrayView1};
 ///
 /// let owned1 = array![1, 2];
 /// let owned2 = array![3, 4];
@@ -746,7 +746,7 @@ pub type Ixs = isize;
 /// description.
 ///
 /// ```
-/// use ndarray::arr2;
+/// use kn0sys_ndarray::arr2;
 ///
 /// let a = arr2(&[[1., 1.],
 ///                [1., 2.],
@@ -1100,7 +1100,7 @@ pub type Ixs = isize;
 /// the data to it within the loop, like this:
 ///
 /// ```rust
-/// use ndarray::{array, Array2, Axis};
+/// use kn0sys_ndarray::{array, Array2, Axis};
 ///
 /// let mut arr = Array2::zeros((2, 3));
 /// for (i, mut row) in arr.axis_iter_mut(Axis(0)).enumerate() {
@@ -1118,7 +1118,7 @@ pub type Ixs = isize;
 /// is correct.
 ///
 /// ```rust
-/// use ndarray::{array, Array2};
+/// use kn0sys_ndarray::{array, Array2};
 ///
 /// let ncols = 3;
 /// let mut data = Vec::new();
@@ -1131,7 +1131,7 @@ pub type Ixs = isize;
 /// }
 /// let arr = Array2::from_shape_vec((nrows, ncols), data)?;
 /// assert_eq!(arr, array![[0, 0, 0], [1, 1, 1]]);
-/// # Ok::<(), ndarray::ShapeError>(())
+/// # Ok::<(), kn0sys_ndarray::ShapeError>(())
 /// ```
 ///
 /// If neither of these options works for you, and you really need to convert
@@ -1141,7 +1141,7 @@ pub type Ixs = isize;
 /// [`::from_shape_vec()`](Self::from_shape_vec), like this:
 ///
 /// ```rust
-/// use ndarray::{array, Array2, Array3};
+/// use kn0sys_ndarray::{array, Array2, Array3};
 ///
 /// let nested: Vec<Array2<i32>> = vec![
 ///     array![[1, 2, 3], [4, 5, 6]],
@@ -1155,7 +1155,7 @@ pub type Ixs = isize;
 ///     [[1, 2, 3], [4, 5, 6]],
 ///     [[7, 8, 9], [10, 11, 12]],
 /// ]);
-/// # Ok::<(), ndarray::ShapeError>(())
+/// # Ok::<(), kn0sys_ndarray::ShapeError>(())
 /// ```
 ///
 /// Note that this implementation assumes that the nested `Vec`s are all the

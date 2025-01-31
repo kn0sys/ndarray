@@ -2,7 +2,7 @@
     clippy::many_single_char_names, clippy::deref_addrof, clippy::unreadable_literal, clippy::many_single_char_names
 )]
 
-use ndarray::{s, Array};
+use kn0sys_ndarray::{s, Array};
 
 #[test]
 fn test_s()

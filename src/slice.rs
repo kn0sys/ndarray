@@ -765,7 +765,7 @@ impl_slicenextdim!((), NewAxis, Ix0, Ix1);
 /// # Example
 ///
 /// ```
-/// use ndarray::{s, Array2, ArrayView2};
+/// use kn0sys_ndarray::{s, Array2, ArrayView2};
 ///
 /// fn laplacian(v: &ArrayView2<f32>) -> Array2<f32> {
 ///     -4. * &v.slice(s![1..-1, 1..-1])
@@ -795,7 +795,7 @@ impl_slicenextdim!((), NewAxis, Ix0, Ix1);
 /// For example,
 ///
 /// ```
-/// # use ndarray::prelude::*;
+/// # use kn0sys_ndarray::prelude::*;
 /// #
 /// # fn main() {
 /// let arr = array![0, 1, 2, 3];

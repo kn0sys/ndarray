@@ -1,5 +1,5 @@
-use ndarray::Array;
-use ndarray::{arr1, arr2, Axis};
+use kn0sys_ndarray::Array;
+use kn0sys_ndarray::{arr1, arr2, Axis};
 use num_complex::Complex;
 use num_traits::Num;
 

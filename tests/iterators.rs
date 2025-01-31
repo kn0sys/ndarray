@@ -1,7 +1,7 @@
 #![allow(clippy::deref_addrof, clippy::unreadable_literal)]
 
-use ndarray::prelude::*;
-use ndarray::{arr3, indices, s, Slice, Zip};
+use kn0sys_ndarray::prelude::*;
+use kn0sys_ndarray::{arr3, indices, s, Slice, Zip};
 
 use itertools::assert_equal;
 use itertools::enumerate;
@@ -103,7 +103,7 @@ fn indexed()
 #[cfg(feature = "std")]
 fn as_slice()
 {
-    use ndarray::Data;
+    use kn0sys_ndarray::Data;
 
     fn assert_slice_correct<A, S, D>(v: &ArrayBase<S, D>)
     where

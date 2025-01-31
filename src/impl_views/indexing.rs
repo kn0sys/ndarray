@@ -27,8 +27,8 @@ use crate::NdIndex;
 /// then the regular indexing / `get_mut` should suffice, too.)
 ///
 /// ```
-/// use ndarray::IndexLonger;
-/// use ndarray::ArrayView;
+/// use kn0sys_ndarray::IndexLonger;
+/// use kn0sys_ndarray::ArrayView;
 ///
 /// let data = [0.; 256];
 /// let long_life_ref = {

@@ -3,9 +3,9 @@
     clippy::float_cmp
 )]
 
-use ndarray::Array;
-use ndarray::Ix0;
-use ndarray::ShapeBuilder;
+use kn0sys_ndarray::Array;
+use kn0sys_ndarray::Ix0;
+use kn0sys_ndarray::ShapeBuilder;
 
 #[test]
 fn test_ix0()

@@ -29,15 +29,16 @@
 //! that the items are not compatible (e.g. that a type doesn't implement a
 //! necessary trait).
 
-use crate::rand::distributions::{Distribution, Uniform};
+use crate::rand::distr::{Distribution, Uniform};
 use crate::rand::rngs::SmallRng;
 use crate::rand::seq::index;
-use crate::rand::{thread_rng, Rng, SeedableRng};
+use crate::rand::{rng, Rng, SeedableRng};
 
-use ndarray::{Array, Axis, RemoveAxis, ShapeBuilder};
-use ndarray::{ArrayBase, Data, DataOwned, Dimension, RawData};
-#[cfg(feature = "quickcheck")]
-use quickcheck::{Arbitrary, Gen};
+use kn0sys_ndarray::{
+    Array, Axis, RemoveAxis, ShapeBuilder,
+    ArrayBase, Data, DataOwned, Dimension, RawData
+};
+use std::convert::TryFrom;
 
 /// `rand`, re-exported for convenience and version-compatibility.
 pub mod rand
@@ -75,12 +76,12 @@ where
     /// overflows usize.
     ///
     /// ```
-    /// use ndarray::Array;
+    /// use kn0sys_ndarray::Array;
     /// use ndarray_rand::RandomExt;
     /// use ndarray_rand::rand_distr::Uniform;
     ///
     /// # fn main() {
-    /// let a = Array::random((2, 5), Uniform::new(0., 10.));
+    /// let a = Array::random((2, 5), Uniform::new(0., 10.).unwrap());
     /// println!("{:8.4}", a);
     /// // Example Output:
     /// // [[  8.6900,   6.9824,   3.8922,   6.5861,   2.4890],
@@ -98,7 +99,7 @@ where
     /// ***Panics*** if the number of elements overflows usize.
     ///
     /// ```
-    /// use ndarray::Array;
+    /// use kn0sys_ndarray::Array;
     /// use ndarray_rand::RandomExt;
     /// use ndarray_rand::rand::SeedableRng;
     /// use ndarray_rand::rand_distr::Uniform;
@@ -110,7 +111,7 @@ where
     /// let mut rng = Isaac64Rng::seed_from_u64(seed);
     ///
     /// // Generate a random array using `rng`
-    /// let a = Array::random_using((2, 5), Uniform::new(0., 10.), &mut rng);
+    /// let a = Array::random_using((2, 5), Uniform::new(0., 10.).unwrap(), &mut rng);
     /// println!("{:8.4}", a);
     /// // Example Output:
     /// // [[  8.6900,   6.9824,   3.8922,   6.5861,   2.4890],
@@ -134,7 +135,7 @@ where
     /// - length of `axis` is 0.
     ///
     /// ```
-    /// use ndarray::{array, Axis};
+    /// use kn0sys_ndarray::{array, Axis};
     /// use ndarray_rand::{RandomExt, SamplingStrategy};
     ///
     /// # fn main() {
@@ -181,7 +182,7 @@ where
     /// - length of `axis` is 0.
     ///
     /// ```
-    /// use ndarray::{array, Axis};
+    /// use kn0sys_ndarray::{array, Axis};
     /// use ndarray_rand::{RandomExt, SamplingStrategy};
     /// use ndarray_rand::rand::SeedableRng;
     /// use rand_isaac::isaac64::Isaac64Rng;
@@ -270,7 +271,7 @@ where
     {
         let indices: Vec<_> = match strategy {
             SamplingStrategy::WithReplacement => {
-                let distribution = Uniform::from(0..self.len_of(axis));
+                let distribution = Uniform::try_from(0..self.len_of(axis)).expect("Uniform");
                 (0..n_samples).map(|_| distribution.sample(rng)).collect()
             }
             SamplingStrategy::WithoutReplacement => index::sample(rng, self.len_of(axis), n_samples).into_vec(),
@@ -292,21 +293,7 @@ pub enum SamplingStrategy
     WithoutReplacement,
 }
 
-// `Arbitrary` enables `quickcheck` to generate random `SamplingStrategy` values for testing.
-#[cfg(feature = "quickcheck")]
-impl Arbitrary for SamplingStrategy
-{
-    fn arbitrary(g: &mut Gen) -> Self
-    {
-        if bool::arbitrary(g) {
-            SamplingStrategy::WithReplacement
-        } else {
-            SamplingStrategy::WithoutReplacement
-        }
-    }
-}
-
 fn get_rng() -> SmallRng
 {
-    SmallRng::from_rng(thread_rng()).expect("create SmallRng from thread_rng failed")
+    SmallRng::from_rng(&mut rng())
 }

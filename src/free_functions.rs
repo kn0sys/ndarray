@@ -20,7 +20,7 @@ use crate::{dimension, ArcArray1, ArcArray2};
 /// Create an **[`Array`]** with one, two, three, four, five, or six dimensions.
 ///
 /// ```
-/// use ndarray::array;
+/// use kn0sys_ndarray::array;
 /// let a1 = array![1, 2, 3, 4];
 ///
 /// let a2 = array![[1, 2],
@@ -54,7 +54,7 @@ use crate::{dimension, ArcArray1, ArcArray2};
 /// arrays can be created with [`ArrayD`].
 ///
 /// ```compile_fail
-/// use ndarray::array;
+/// use kn0sys_ndarray::array;
 /// let a7 = array![[[[[[[1, 2, 3]]]]]]];
 /// // error: Arrays of 7 dimensions or more (or ndarrays of Rust arrays) cannot be constructed with the array! macro.
 /// ```
@@ -120,7 +120,7 @@ pub const fn aview0<A>(x: &A) -> ArrayView0<'_, A>
 /// `isize::MAX` number of bytes.)
 ///
 /// ```
-/// use ndarray::{aview1, ArrayView1};
+/// use kn0sys_ndarray::{aview1, ArrayView1};
 ///
 /// let data = [1.0; 1024];
 ///
@@ -158,7 +158,7 @@ pub const fn aview1<A>(xs: &[A]) -> ArrayView1<'_, A>
 /// contain more than `isize::MAX` number of bytes).
 ///
 /// ```
-/// use ndarray::{aview2, ArrayView2};
+/// use kn0sys_ndarray::{aview2, ArrayView2};
 ///
 /// let data = vec![[1., 2., 3.], [4., 5., 6.]];
 ///
@@ -209,7 +209,7 @@ pub const fn aview2<A, const N: usize>(xs: &[[A; N]]) -> ArrayView2<'_, A>
 /// Create a one-dimensional read-write array view with elements borrowing `xs`.
 ///
 /// ```
-/// use ndarray::{aview_mut1, s};
+/// use kn0sys_ndarray::{aview_mut1, s};
 /// // Create an array view over some data, then slice it and modify it.
 /// let mut data = [0; 1024];
 /// {
@@ -231,7 +231,7 @@ pub fn aview_mut1<A>(xs: &mut [A]) -> ArrayViewMut1<'_, A>
 /// # Example
 ///
 /// ```
-/// use ndarray::aview_mut2;
+/// use kn0sys_ndarray::aview_mut2;
 ///
 /// // The inner (nested) and outer arrays can be of any length.
 /// let mut data = [[0.; 2]; 128];
@@ -253,7 +253,7 @@ pub fn aview_mut2<A, const N: usize>(xs: &mut [[A; N]]) -> ArrayViewMut2<'_, A>
 /// Create a two-dimensional array with elements from `xs`.
 ///
 /// ```
-/// use ndarray::arr2;
+/// use kn0sys_ndarray::arr2;
 ///
 /// let a = arr2(&[[1, 2, 3],
 ///                [4, 5, 6]]);
@@ -312,7 +312,7 @@ pub fn rcarr2<A: Clone, const N: usize>(xs: &[[A; N]]) -> ArcArray2<A>
 /// **Panics** if the slices are not all of the same length.
 ///
 /// ```
-/// use ndarray::arr3;
+/// use kn0sys_ndarray::arr3;
 ///
 /// let a = arr3(&[[[1, 2],
 ///                 [3, 4]],

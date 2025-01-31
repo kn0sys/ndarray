@@ -185,7 +185,7 @@ where S: DataOwned<Elem = A>
     /// **Panics** if the length is greater than `isize::MAX`.
     ///
     /// ```rust
-    /// use ndarray::Array;
+    /// use  kn0sys_ndarray::Array;
     ///
     /// let array = Array::from(vec![1., 2., 3., 4.]);
     /// ```
@@ -203,7 +203,7 @@ where S: DataOwned<Elem = A>
     /// **Panics** if the length is greater than `isize::MAX`.
     ///
     /// ```rust
-    /// use ndarray::{Array, arr1};
+    /// use  kn0sys_ndarray::{Array, arr1};
     ///
     /// // Either use `from_iter` directly or use `Iterator::collect`.
     /// let array = Array::from_iter((0..5).map(|x| x * x));
@@ -475,7 +475,7 @@ where D: Dimension
 /// Use `.into()` to do the conversion.
 ///
 /// ```
-/// use ndarray::AsArray;
+/// use  kn0sys_ndarray::AsArray;
 ///
 /// fn sum<'a, V: AsArray<'a, f64>>(data: V) -> f64 {
 ///     let array_view = data.into();

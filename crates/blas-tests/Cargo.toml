@@ -11,7 +11,7 @@ doc = false
 doctest = false
 
 [dependencies]
-ndarray = { workspace = true, features = ["approx", "blas"] }
+kn0sys_ndarray = { workspace = true, features = ["approx", "blas"] }
 ndarray-gen = { workspace = true }
 
 blas-src = { version = "0.10", optional = true }

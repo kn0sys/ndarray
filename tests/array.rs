@@ -8,13 +8,11 @@ use approx::assert_relative_eq;
 use defmac::defmac;
 #[allow(deprecated)]
 use itertools::{zip, Itertools};
-use ndarray::indices;
-use ndarray::prelude::*;
-use ndarray::ErrorKind;
-use ndarray::{arr3, rcarr2};
-use ndarray::{Slice, SliceInfo, SliceInfoElem};
-use num_complex::Complex;
-use std::convert::TryFrom;
+use kn0sys_ndarray::{
+    prelude::*, indices, ErrorKind, 
+    arr3, rcarr2, Slice, SliceInfo, SliceInfoElem
+};
+use num_complex::*;
 
 macro_rules! assert_panics {
     ($body:expr) => {
@@ -2482,7 +2480,7 @@ fn array_macros()
 mod as_standard_layout_tests
 {
     use super::*;
-    use ndarray::Data;
+    use kn0sys_ndarray::Data;
     use std::fmt::Debug;
 
     fn test_as_standard_layout_for<S, D>(orig: ArrayBase<S, D>)

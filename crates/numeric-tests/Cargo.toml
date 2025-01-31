@@ -11,7 +11,7 @@ doc = false
 doctest = false
 
 [dependencies]
-ndarray = { workspace = true, features = ["approx"] }
+kn0sys_ndarray = { workspace = true, features = ["approx"] }
 ndarray-rand = { workspace = true }
 
 approx = { workspace = true }
@@ -26,4 +26,4 @@ num-traits = { workspace = true }
 num-complex = { workspace = true }
 
 [features]
-test_blas = ["ndarray/blas", "blas-src", "openblas-src"]
+test_blas = ["kn0sys_ndarray/blas", "blas-src", "openblas-src"]

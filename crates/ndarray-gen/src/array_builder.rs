@@ -6,11 +6,7 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-use ndarray::Array;
-use ndarray::Dimension;
-use ndarray::IntoDimension;
-use ndarray::Order;
-
+use kn0sys_ndarray::{Array, Dimension, IntoDimension, Order};
 use num_traits::Num;
 
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]

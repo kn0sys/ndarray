@@ -35,7 +35,7 @@ where
     /// See also [`ArrayBase::tril`]
     ///
     /// ```
-    /// use ndarray::array;
+    /// use kn0sys_ndarray::array;
     ///
     /// let arr = array![
     ///     [1, 2, 3],
@@ -98,7 +98,7 @@ where
     /// See also [`ArrayBase::triu`]
     ///
     /// ```
-    /// use ndarray::array;
+    /// use kn0sys_ndarray::array;
     ///
     /// let arr = array![
     ///     [1, 2, 3],

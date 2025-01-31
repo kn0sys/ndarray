@@ -7,7 +7,7 @@ use crate::{Dim, Dimension, IntoDimension, Ix, Ix0, Ix1, Ix2, Ix3, Ix4, Ix5, Ix6
 /// Tuple or fixed size arrays that can be used to index an array.
 ///
 /// ```
-/// use ndarray::arr2;
+/// use kn0sys_ndarray::arr2;
 ///
 /// let mut a = arr2(&[[0, 1],
 ///                    [2, 3]]);

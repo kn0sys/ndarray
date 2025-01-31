@@ -1,6 +1,6 @@
-use ndarray::indices_of;
-use ndarray::prelude::*;
-use ndarray::Order;
+use kn0sys_ndarray::indices_of;
+use kn0sys_ndarray::prelude::*;
+use kn0sys_ndarray::Order;
 
 #[test]
 fn test_ixdyn_index_iterate()

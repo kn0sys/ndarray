@@ -2,7 +2,7 @@
     clippy::many_single_char_names, clippy::deref_addrof, clippy::unreadable_literal, clippy::many_single_char_names
 )]
 
-use ndarray::prelude::*;
+use kn0sys_ndarray::prelude::*;
 
 /// Reorder a's axes so that they are in "standard" axis order;
 /// make sure axes are in positive stride direction, and merge adjacent

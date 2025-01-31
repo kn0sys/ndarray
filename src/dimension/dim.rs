@@ -27,8 +27,8 @@ use std::fmt;
 /// `Dim` by the array constructor.
 ///
 /// ```
-/// use ndarray::Array2;
-/// use ndarray::Dim;
+/// use kn0sys_ndarray::Array2;
+/// use kn0sys_ndarray::Dim;
 ///
 /// let mut array = Array2::zeros((3, 2));
 /// array[[0, 0]] = 1.;

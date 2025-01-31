@@ -51,7 +51,7 @@ where S: DataOwned<Elem = A>
     /// **Panics** if the length is greater than `isize::MAX`.
     ///
     /// ```rust
-    /// use ndarray::Array;
+    /// use kn0sys_ndarray::Array;
     ///
     /// let array = Array::from_vec(vec![1., 2., 3., 4.]);
     /// ```
@@ -71,7 +71,7 @@ where S: DataOwned<Elem = A>
     /// **Panics** if the length is greater than `isize::MAX`.
     ///
     /// ```rust
-    /// use ndarray::Array;
+    /// use kn0sys_ndarray::Array;
     ///
     /// let array = Array::from_iter(0..10);
     /// ```
@@ -93,7 +93,7 @@ where S: DataOwned<Elem = A>
     /// to type `A` fails.
     ///
     /// ```rust
-    /// use ndarray::{Array, arr1};
+    /// use kn0sys_ndarray::{Array, arr1};
     ///
     /// let array = Array::linspace(0., 1., 5);
     /// assert!(array == arr1(&[0.0, 0.25, 0.5, 0.75, 1.0]))
@@ -111,7 +111,7 @@ where S: DataOwned<Elem = A>
     /// **Panics** if the length is greater than `isize::MAX`.
     ///
     /// ```rust
-    /// use ndarray::{Array, arr1};
+    /// use kn0sys_ndarray::{Array, arr1};
     ///
     /// let array = Array::range(0., 5., 1.);
     /// assert!(array == arr1(&[0., 1., 2., 3., 4.]))
@@ -135,7 +135,7 @@ where S: DataOwned<Elem = A>
     /// ```rust
     /// # #[cfg(feature = "approx")] {
     /// use approx::assert_abs_diff_eq;
-    /// use ndarray::{Array, arr1};
+    /// use kn0sys_ndarray::{Array, arr1};
     ///
     /// let array = Array::logspace(10.0, 0.0, 3.0, 4);
     /// assert_abs_diff_eq!(array, arr1(&[1e0, 1e1, 1e2, 1e3]));
@@ -165,7 +165,7 @@ where S: DataOwned<Elem = A>
     /// # fn example() -> Option<()> {
     /// # #[cfg(feature = "approx")] {
     /// use approx::assert_abs_diff_eq;
-    /// use ndarray::{Array, arr1};
+    /// use kn0sys_ndarray::{Array, arr1};
     ///
     /// let array = Array::geomspace(1e0, 1e3, 4)?;
     /// assert_abs_diff_eq!(array, arr1(&[1e0, 1e1, 1e2, 1e3]), epsilon = 1e-12);
@@ -210,7 +210,7 @@ where S: DataOwned<Elem = A>
     /// **Panics** if `diag.len() * diag.len()` would overflow `isize`.
     ///
     /// ```rust
-    /// use ndarray::{Array2, arr1, arr2};
+    /// use kn0sys_ndarray::{Array2, arr1, arr2};
     ///
     /// let diag = arr1(&[1, 2]);
     /// let array = Array2::from_diag(&diag);
@@ -234,7 +234,7 @@ where S: DataOwned<Elem = A>
     /// **Panics** if `n * n` would overflow `isize`.
     ///
     /// ```rust
-    /// use ndarray::{array, Array2};
+    /// use kn0sys_ndarray::{array, Array2};
     ///
     /// let array = Array2::from_diag_elem(2, 5.);
     /// assert_eq!(array, array![[5., 0.], [0., 5.]]);
@@ -305,7 +305,7 @@ where
     /// **Panics** if the product of non-zero axis lengths overflows `isize`.
     ///
     /// ```
-    /// use ndarray::{Array, arr3, ShapeBuilder};
+    /// use kn0sys_ndarray::{Array, arr3, ShapeBuilder};
     ///
     /// let a = Array::from_elem((2, 2, 2), 1.);
     ///
@@ -393,7 +393,7 @@ where
     /// **Panics** if the product of non-zero axis lengths overflows `isize`.
     ///
     /// ```
-    /// use ndarray::{Array, arr2};
+    /// use kn0sys_ndarray::{Array, arr2};
     ///
     /// // Create a table of i × j (with i and j from 1 to 3)
     /// let ij_table = Array::from_shape_fn((3, 3), |(i, j)| (1 + i) * (1 + j));
@@ -441,9 +441,9 @@ where
     /// shape/strides would result in overflowing `isize`.
     ///
     /// ```
-    /// use ndarray::Array;
-    /// use ndarray::ShapeBuilder; // Needed for .strides() method
-    /// use ndarray::arr2;
+    /// use kn0sys_ndarray::Array;
+    /// use kn0sys_ndarray::ShapeBuilder; // Needed for .strides() method
+    /// use kn0sys_ndarray::arr2;
     ///
     /// let a = Array::from_shape_vec((2, 2), vec![1., 2., 3., 4.]);
     /// assert!(a.is_ok());
@@ -558,7 +558,7 @@ where
     /// [`.assume_init()`]: ArrayBase::assume_init
     ///
     /// ```
-    /// use ndarray::{s, Array2};
+    /// use kn0sys_ndarray::{s, Array2};
     ///
     /// // Example Task: Let's create a column shifted copy of the input
     ///

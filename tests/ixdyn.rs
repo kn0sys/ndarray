@@ -3,11 +3,11 @@
     clippy::float_cmp
 )]
 
-use ndarray::Array;
-use ndarray::IntoDimension;
-use ndarray::Ix3;
-use ndarray::Order;
-use ndarray::ShapeBuilder;
+use kn0sys_ndarray::Array;
+use kn0sys_ndarray::IntoDimension;
+use kn0sys_ndarray::Ix3;
+use kn0sys_ndarray::Order;
+use kn0sys_ndarray::ShapeBuilder;
 
 #[test]
 fn test_ixdyn()
@@ -166,7 +166,7 @@ fn test_0_add_broad()
 #[cfg(feature = "std")]
 fn test_into_dimension()
 {
-    use ndarray::{Ix0, Ix1, Ix2, IxDyn};
+    use kn0sys_ndarray::{Ix0, Ix1, Ix2, IxDyn};
 
     let a = Array::linspace(0., 41., 6 * 7)
         .into_shape_with_order((6, 7))

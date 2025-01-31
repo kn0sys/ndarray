@@ -1,5 +1,5 @@
-use ndarray::prelude::*;
-use ndarray::rcarr1;
+use kn0sys_ndarray::prelude::*;
+use kn0sys_ndarray::rcarr1;
 
 #[test]
 fn formatting()

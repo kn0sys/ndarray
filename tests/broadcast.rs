@@ -1,4 +1,4 @@
-use ndarray::prelude::*;
+use kn0sys_ndarray::prelude::*;
 
 #[test]
 #[cfg(feature = "std")]

@@ -83,8 +83,8 @@ pub type Ix6 = Dim<[Ix; 6]>;
 /// `IntoDimension` to produce `IxDyn`).
 ///
 /// ```
-/// use ndarray::ArrayD;
-/// use ndarray::IxDyn;
+/// use kn0sys_ndarray::ArrayD;
+/// use kn0sys_ndarray::IxDyn;
 ///
 /// // Create a 5 × 6 × 3 × 4 array using the dynamic dimension type
 /// let mut a = ArrayD::<f64>::zeros(IxDyn(&[5, 6, 3, 4]));

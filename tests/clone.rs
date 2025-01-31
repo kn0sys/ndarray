@@ -1,4 +1,4 @@
-use ndarray::arr2;
+use kn0sys_ndarray::arr2;
 
 #[test]
 fn test_clone_from()

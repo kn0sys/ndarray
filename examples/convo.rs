@@ -1,10 +1,10 @@
 #![allow(unused)]
-extern crate ndarray;
+extern crate kn0sys_ndarray;
 
 #[cfg(feature = "std")]
 use num_traits::Float;
 
-use ndarray::prelude::*;
+use kn0sys_ndarray::prelude::*;
 
 const SOBEL_X: [[f32; 3]; 3] = [[-1., 0., 1.], [-2., 0., 2.], [-1., 0., 1.]];
 const SOBEL_Y: [[f32; 3]; 3] = [[1., 2., 1.], [0., 0., 0.], [-1., -2., -1.]];

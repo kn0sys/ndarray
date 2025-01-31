@@ -38,7 +38,7 @@
 /// ## Examples
 ///
 /// ```rust
-/// use ndarray::{azip, Array1, Array2, Axis};
+/// use kn0sys_ndarray::{azip, Array1, Array2, Axis};
 ///
 /// type M = Array2<f32>;
 ///

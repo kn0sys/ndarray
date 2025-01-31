@@ -2,8 +2,8 @@
     clippy::many_single_char_names, clippy::deref_addrof, clippy::unreadable_literal, clippy::many_single_char_names
 )]
 
-use ndarray::prelude::*;
-use ndarray::Zip;
+use kn0sys_ndarray::prelude::*;
+use kn0sys_ndarray::Zip;
 
 fn main()
 {

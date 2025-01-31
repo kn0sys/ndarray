@@ -3,9 +3,9 @@
 )]
 
 use defmac::defmac;
-use ndarray::arr3;
-use ndarray::prelude::*;
-use ndarray::Zip;
+use kn0sys_ndarray::arr3;
+use kn0sys_ndarray::prelude::*;
+use kn0sys_ndarray::Zip;
 
 #[test]
 fn test_from_shape_fn()

@@ -152,7 +152,7 @@ where
     /// Limit the values for each element, similar to NumPy's `clip` function.
     ///
     /// ```
-    /// use ndarray::array;
+    /// use kn0sys_ndarray::array;
     ///
     /// let a = array![0., 1., 2., 3., 4., 5., 6., 7., 8., 9.];
     /// assert_eq!(a.clamp(1., 8.), array![1., 1., 2., 3., 4., 5., 6., 7., 8., 8.]);

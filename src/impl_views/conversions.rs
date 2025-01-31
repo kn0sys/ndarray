@@ -81,7 +81,7 @@ impl<'a, A> ArrayView<'a, A, Ix0>
     /// the array view was pointing to.
     ///
     /// ```
-    /// use ndarray::{arr0, Array0};
+    /// use kn0sys_ndarray::{arr0, Array0};
     ///
     /// // `Foo` doesn't implement `Clone`.
     /// #[derive(Debug, Eq, PartialEq)]
@@ -109,7 +109,7 @@ impl<'a, A> ArrayViewMut<'a, A, Ix0>
     /// the array view was pointing to.
     ///
     /// ```
-    /// use ndarray::{arr0, Array0};
+    /// use kn0sys_ndarray::{arr0, Array0};
     ///
     /// let mut array: Array0<f64> = arr0(5.);
     /// let view = array.view_mut();

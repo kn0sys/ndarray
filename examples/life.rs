@@ -2,7 +2,7 @@
     clippy::many_single_char_names, clippy::deref_addrof, clippy::unreadable_literal, clippy::many_single_char_names
 )]
 
-use ndarray::prelude::*;
+use kn0sys_ndarray::prelude::*;
 
 const INPUT: &[u8] = include_bytes!("life.txt");
 

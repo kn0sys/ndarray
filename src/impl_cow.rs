@@ -57,7 +57,7 @@ where Slice: AsRef<[A]>
     /// **Panics** if the slice length is greater than [`isize::MAX`].
     ///
     /// ```
-    /// use ndarray::{array, CowArray};
+    /// use kn0sys_ndarray::{array, CowArray};
     ///
     /// let array = CowArray::from(&[1., 2., 3., 4.]);
     /// assert!(array.is_view());

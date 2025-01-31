@@ -5,7 +5,7 @@
 
 // Test cases for bounds check elimination
 
-use ndarray::prelude::*;
+use kn0sys_ndarray::prelude::*;
 
 /*
 pub fn testslice(a: &[f64]) -> f64 {

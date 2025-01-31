@@ -22,8 +22,8 @@ where D: Dimension
 /// # Examples
 ///
 /// ```
-/// use ndarray::Array3;
-/// use ndarray::Axis;
+/// use kn0sys_ndarray::Array3;
+/// use kn0sys_ndarray::Axis;
 ///
 /// let a = Array3::<f32>::zeros((3, 5, 4));
 ///

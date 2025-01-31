@@ -11,7 +11,7 @@ doc = false
 doctest = false
 
 [dependencies]
-ndarray = { workspace = true, features = ["serde"] }
+kn0sys_ndarray = { workspace = true, features = ["serde"] }
 
 serde = { version = "1.0.100", default-features = false }
 ron = { version = "0.8.1" }

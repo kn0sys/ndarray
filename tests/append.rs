@@ -1,5 +1,4 @@
-use ndarray::prelude::*;
-use ndarray::{ErrorKind, ShapeError};
+use kn0sys_ndarray::{prelude::*,ErrorKind, ShapeError};
 
 #[test]
 fn push_row()

@@ -19,7 +19,7 @@ where S: Data<Elem = A>
     /// **Panics** if the axis is out of bounds.
     ///
     /// ```
-    /// use ndarray::{Axis, arr2, arr3};
+    /// use kn0sys_ndarray::{Axis, arr2, arr3};
     ///
     /// let mut a = arr2(&[[1, 2, 3], [4, 5, 6]]).into_dyn();
     /// assert_eq!(a.shape(), &[2, 3]);
@@ -42,7 +42,7 @@ where S: Data<Elem = A>
     /// **Panics** if `axis` or `index` is out of bounds.
     ///
     /// ```
-    /// use ndarray::{Axis, arr1, arr2};
+    /// use kn0sys_ndarray::{Axis, arr1, arr2};
     ///
     /// let mut a = arr2(&[[1, 2, 3], [4, 5, 6]]).into_dyn();
     /// assert_eq!(a.shape(), &[2, 3]);
@@ -65,7 +65,7 @@ where S: Data<Elem = A>
     /// have at least one dimension, even if it has a length of 1.
     ///
     /// ```
-    /// use ndarray::{arr1, arr2, arr3};
+    /// use kn0sys_ndarray::{arr1, arr2, arr3};
     ///
     /// let a = arr3(&[[[1, 2, 3]], [[4, 5, 6]]]).into_dyn();
     /// assert_eq!(a.shape(), &[2, 1, 3]);

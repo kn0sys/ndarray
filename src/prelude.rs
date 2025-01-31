@@ -12,7 +12,7 @@
 //! and macros that you can import easily as a group.
 //!
 //! ```
-//! use ndarray::prelude::*;
+//! use kn0sys_ndarray::prelude::*;
 //!
 //! # let _ = arr0(1); // use the import
 //! ```

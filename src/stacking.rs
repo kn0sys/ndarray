@@ -21,7 +21,7 @@ use crate::imp_prelude::*;
 /// if the result is larger than is possible to represent.
 ///
 /// ```
-/// use ndarray::{arr2, Axis, concatenate};
+/// use kn0sys_ndarray::{arr2, Axis, concatenate};
 ///
 /// let a = arr2(&[[2., 2.],
 ///                [3., 3.]]);
@@ -79,9 +79,9 @@ where
 /// if the result is larger than is possible to represent.
 ///
 /// ```
-/// extern crate ndarray;
+/// extern crate kn0sys_ndarray;
 ///
-/// use ndarray::{arr2, arr3, stack, Axis};
+/// use kn0sys_ndarray::{arr2, arr3, stack, Axis};
 ///
 /// # fn main() {
 ///
@@ -144,9 +144,9 @@ where
 /// ***Panics*** if the `stack` function would return an error.
 ///
 /// ```
-/// extern crate ndarray;
+/// extern crate kn0sys_ndarray;
 ///
-/// use ndarray::{arr2, arr3, stack, Axis};
+/// use kn0sys_ndarray::{arr2, arr3, stack, Axis};
 ///
 /// # fn main() {
 ///
@@ -193,9 +193,9 @@ macro_rules! stack {
 /// ***Panics*** if the `concatenate` function would return an error.
 ///
 /// ```
-/// extern crate ndarray;
+/// extern crate kn0sys_ndarray;
 ///
-/// use ndarray::{arr2, concatenate, Axis};
+/// use kn0sys_ndarray::{arr2, concatenate, Axis};
 ///
 /// # fn main() {
 ///

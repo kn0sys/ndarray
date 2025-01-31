@@ -1,4 +1,4 @@
-extern crate ndarray;
+extern crate kn0sys_ndarray;
 
 extern crate serde;
 
@@ -8,7 +8,7 @@ extern crate rmp_serde;
 
 extern crate ron;
 
-use ndarray::{arr0, arr1, arr2, s, ArcArray, ArcArray2, ArrayD, IxDyn};
+use kn0sys_ndarray::{arr0, arr1, arr2, s, ArcArray, ArcArray2, ArrayD, IxDyn};
 
 #[test]
 fn serial_many_dim_serde()

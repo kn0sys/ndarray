@@ -2,8 +2,8 @@
 //! This file may not be so instructive except for advanced users, instead it
 //! could be a "feature preview" before sorting is added to the main crate.
 //!
-use ndarray::prelude::*;
-use ndarray::{Data, RemoveAxis, Zip};
+use kn0sys_ndarray::prelude::*;
+use kn0sys_ndarray::{Data, RemoveAxis, Zip};
 
 use rawpointer::PointerExt;
 

@@ -3,7 +3,7 @@
     clippy::float_cmp
 )]
 
-use ndarray::prelude::*;
+use kn0sys_ndarray::prelude::*;
 
 #[test]
 fn test_arr0_into_dyn()

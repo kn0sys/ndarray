@@ -142,8 +142,8 @@ trait ZippableTuple: Sized
 /// to common ways to use `Zip`.
 ///
 /// ```
-/// use ndarray::Zip;
-/// use ndarray::Array2;
+/// use kn0sys_ndarray::Zip;
+/// use kn0sys_ndarray::Array2;
 ///
 /// type M = Array2<f64>;
 ///
@@ -171,7 +171,7 @@ trait ZippableTuple: Sized
 /// //  for `a` have the same shape and dimensionality.
 /// //  The rows producer yields one array view (`row`) per iteration.
 ///
-/// use ndarray::{Array1, Axis};
+/// use kn0sys_ndarray::{Array1, Axis};
 ///
 /// let mut totals = Array1::zeros(a.nrows());
 ///
@@ -601,7 +601,7 @@ macro_rules! map_impl {
             /// consumed) by using `Zip`:
             ///
             /// ```
-            /// use ndarray::{array, Zip};
+            /// use kn0sys_ndarray::{array, Zip};
             ///
             /// let a = array![[1, 5], [3, 7]];
             /// let b = array![[2, 4], [8, 6]];
@@ -645,7 +645,7 @@ macro_rules! map_impl {
             /// Example:
             ///
             /// ```
-            /// use ndarray::{array, Zip};
+            /// use kn0sys_ndarray::{array, Zip};
             /// let a = array![1, 2, 3];
             /// let b = array![1, 4, 9];
             /// assert!(Zip::from(&a).and(&b).all(|&a, &b| a * a == b));
@@ -671,7 +671,7 @@ macro_rules! map_impl {
             /// Example:
             ///
             /// ```
-            /// use ndarray::{array, Zip};
+            /// use kn0sys_ndarray::{array, Zip};
             /// let a = array![1, 2, 3];
             /// let b = array![1, 4, 9];
             /// assert!(Zip::from(&a).and(&b).any(|&a, &b| a == b));

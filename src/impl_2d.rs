@@ -18,7 +18,7 @@ where S: RawData<Elem = A>
     /// **Panics** if `index` is out of bounds.
     ///
     /// ```
-    /// use ndarray::array;
+    /// use kn0sys_ndarray::array;
     /// let array = array![[1., 2.], [3., 4.]];
     /// assert_eq!(array.row(0), array![1., 2.]);
     /// ```
@@ -34,7 +34,7 @@ where S: RawData<Elem = A>
     /// **Panics** if `index` is out of bounds.
     ///
     /// ```
-    /// use ndarray::array;
+    /// use kn0sys_ndarray::array;
     /// let mut array = array![[1., 2.], [3., 4.]];
     /// array.row_mut(0)[1] = 5.;
     /// assert_eq!(array, array![[1., 5.], [3., 4.]]);
@@ -49,7 +49,7 @@ where S: RawData<Elem = A>
     /// Return the number of rows (length of `Axis(0)`) in the two-dimensional array.
     ///
     /// ```
-    /// use ndarray::{array, Axis};
+    /// use kn0sys_ndarray::{array, Axis};
     ///
     /// let array = array![[1., 2.],
     ///                    [3., 4.],
@@ -73,7 +73,7 @@ where S: RawData<Elem = A>
     /// **Panics** if `index` is out of bounds.
     ///
     /// ```
-    /// use ndarray::array;
+    /// use kn0sys_ndarray::array;
     /// let array = array![[1., 2.], [3., 4.]];
     /// assert_eq!(array.column(0), array![1., 3.]);
     /// ```
@@ -89,7 +89,7 @@ where S: RawData<Elem = A>
     /// **Panics** if `index` is out of bounds.
     ///
     /// ```
-    /// use ndarray::array;
+    /// use kn0sys_ndarray::array;
     /// let mut array = array![[1., 2.], [3., 4.]];
     /// array.column_mut(0)[1] = 5.;
     /// assert_eq!(array, array![[1., 2.], [5., 4.]]);
@@ -104,7 +104,7 @@ where S: RawData<Elem = A>
     /// Return the number of columns (length of `Axis(1)`) in the two-dimensional array.
     ///
     /// ```
-    /// use ndarray::{array, Axis};
+    /// use kn0sys_ndarray::{array, Axis};
     ///
     /// let array = array![[1., 2.],
     ///                    [3., 4.],
@@ -128,13 +128,13 @@ where S: RawData<Elem = A>
     /// # Examples
     /// Square:
     /// ```
-    /// use ndarray::array;
+    /// use kn0sys_ndarray::array;
     /// let array = array![[1., 2.], [3., 4.]];
     /// assert!(array.is_square());
     /// ```
     /// Not square:
     /// ```
-    /// use ndarray::array;
+    /// use kn0sys_ndarray::array;
     /// let array = array![[1., 2., 5.], [3., 4., 6.]];
     /// assert!(!array.is_square());
     /// ```

@@ -2,20 +2,21 @@
     clippy::many_single_char_names, clippy::deref_addrof, clippy::unreadable_literal, clippy::many_single_char_names
 )]
 #![cfg(feature = "std")]
-use ndarray::linalg::general_mat_mul;
-use ndarray::linalg::kron;
-use ndarray::prelude::*;
+use kn0sys_ndarray::linalg::general_mat_mul;
+use kn0sys_ndarray::linalg::kron;
+use kn0sys_ndarray::prelude::*;
 #[cfg(feature = "approx")]
-use ndarray::Order;
-use ndarray::{rcarr1, rcarr2};
-use ndarray::{Data, LinalgScalar};
-use ndarray::{Ix, Ixs};
+use kn0sys_ndarray::Order;
+use kn0sys_ndarray::{rcarr1, rcarr2};
+use kn0sys_ndarray::{Data, LinalgScalar};
+use kn0sys_ndarray::{Ix, Ixs};
 use ndarray_gen::array_builder::ArrayBuilder;
 
 use approx::assert_abs_diff_eq;
 use defmac::defmac;
 use num_traits::Num;
 use num_traits::Zero;
+use std::convert::TryFrom;
 
 fn test_oper(op: &str, a: &[f32], b: &[f32], c: &[f32])
 {
@@ -546,7 +547,7 @@ fn scaled_add_2()
 fn scaled_add_3()
 {
     use approx::assert_relative_eq;
-    use ndarray::{Slice, SliceInfo, SliceInfoElem};
+    use kn0sys_ndarray::{Slice, SliceInfo, SliceInfoElem};
     use std::convert::TryFrom;
 
     let beta = -2.3;
@@ -688,7 +689,7 @@ fn gen_mat_mul_i32()
 fn gen_mat_vec_mul()
 {
     use approx::assert_relative_eq;
-    use ndarray::linalg::general_mat_vec_mul;
+    use kn0sys_ndarray::linalg::general_mat_vec_mul;
 
     // simple, slow, correct (hopefully) mat mul
     fn reference_mat_vec_mul<A, S, S2>(lhs: &ArrayBase<S, Ix2>, rhs: &ArrayBase<S2, Ix1>) -> Array1<A>

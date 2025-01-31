@@ -24,7 +24,7 @@ impl<A> Array<A, Ix0>
     /// Returns the single element in the array without cloning it.
     ///
     /// ```
-    /// use ndarray::{arr0, Array0};
+    /// use kn0sys_ndarray::{arr0, Array0};
     ///
     /// // `Foo` doesn't implement `Clone`.
     /// #[derive(Debug, Eq, PartialEq)]
@@ -85,7 +85,7 @@ where D: Dimension
     /// of the array (`.iter()` order) and of the returned vector will be the same.
     ///
     /// ```
-    /// use ndarray::{array, Array2, Axis};
+    /// use kn0sys_ndarray::{array, Array2, Axis};
     ///
     /// let mut arr: Array2<f64> = array![[1., 2.], [3., 4.], [5., 6.]];
     /// arr.slice_axis_inplace(Axis(0), (1..).into());
@@ -119,7 +119,7 @@ where D: Dimension
     /// elements sliced in the same way.
     ///
     /// ```
-    /// use ndarray::{array, Array2, Axis};
+    /// use kn0sys_ndarray::{array, Array2, Axis};
     ///
     /// let mut arr: Array2<()> = array![[(), ()], [(), ()], [(), ()]];
     /// arr.slice_axis_inplace(Axis(0), (1..).into());
@@ -191,7 +191,7 @@ impl<A> Array<A, Ix2>
     /// append is O(m), where *m* is the length of the row.
     ///
     /// ```rust
-    /// use ndarray::{Array, ArrayView, array};
+    /// use kn0sys_ndarray::{Array, ArrayView, array};
     ///
     /// // create an empty array and append
     /// let mut a = Array::zeros((0, 4));
@@ -236,7 +236,7 @@ impl<A> Array<A, Ix2>
     /// is O(m), where *m* is the length of the column.
     ///
     /// ```rust
-    /// use ndarray::{Array, ArrayView, array};
+    /// use kn0sys_ndarray::{Array, ArrayView, array};
     ///
     /// // create an empty array and append
     /// let mut a = Array::zeros((2, 0));
@@ -267,7 +267,7 @@ impl<A> Array<A, Ix2>
     /// `additional` exceeds `isize::MAX`.
     ///
     /// ```rust
-    /// use ndarray::Array2;
+    /// use kn0sys_ndarray::Array2;
     /// let mut a = Array2::<i32>::zeros((2,4));
     /// a.reserve_rows(1000).unwrap();
     /// assert!(a.into_raw_vec().capacity() >= 4*1002);
@@ -290,7 +290,7 @@ impl<A> Array<A, Ix2>
     /// `additional` exceeds `isize::MAX`.
     ///
     /// ```rust
-    /// use ndarray::Array2;
+    /// use kn0sys_ndarray::Array2;
     /// let mut a = Array2::<i32>::zeros((2,4));
     /// a.reserve_columns(1000).unwrap();
     /// assert!(a.into_raw_vec().capacity() >= 2*1002);
@@ -315,7 +315,7 @@ where D: Dimension
     /// ## Example
     ///
     /// ```
-    /// use ndarray::Array;
+    /// use kn0sys_ndarray::Array;
     ///
     /// // Usage example of move_into in safe code
     /// let mut a = Array::default((10, 10));
@@ -365,7 +365,7 @@ where D: Dimension
     /// ## Example
     ///
     /// ```
-    /// use ndarray::Array;
+    /// use kn0sys_ndarray::Array;
     ///
     /// let a = Array::from_iter(0..100).into_shape_with_order((10, 10)).unwrap();
     /// let mut b = Array::uninit((10, 10));
@@ -526,7 +526,7 @@ where D: Dimension
     /// The memory layout of the argument `array` does not matter to the same extent.
     ///
     /// ```rust
-    /// use ndarray::{Array, ArrayView, array, Axis};
+    /// use kn0sys_ndarray::{Array, ArrayView, array, Axis};
     ///
     /// // create an empty array and push rows to it
     /// let mut a = Array::zeros((0, 4));
@@ -582,7 +582,7 @@ where D: Dimension
     /// The memory layout of the argument `array` does not matter to the same extent.
     ///
     /// ```rust
-    /// use ndarray::{Array, ArrayView, array, Axis};
+    /// use kn0sys_ndarray::{Array, ArrayView, array, Axis};
     ///
     /// // create an empty array and append two rows at a time
     /// let mut a = Array::zeros((0, 4));
@@ -814,7 +814,7 @@ where D: Dimension
     /// `additional` exceeds `isize::MAX`.
     ///
     /// ```rust
-    /// use ndarray::{Array3, Axis};
+    /// use kn0sys_ndarray::{Array3, Axis};
     /// let mut a = Array3::<i32>::zeros((0,2,4));
     /// a.reserve(Axis(0), 1000).unwrap();
     /// assert!(a.into_raw_vec().capacity() >= 2*4*1000);

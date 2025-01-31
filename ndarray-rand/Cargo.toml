@@ -14,15 +14,13 @@ description = "Constructors for randomized arrays. `rand` integration for `ndarr
 keywords = ["multidimensional", "matrix", "rand", "ndarray"]
 
 [dependencies]
-ndarray = { workspace = true }
+kn0sys_ndarray = { workspace = true }
 
 rand = { workspace = true }
 rand_distr = { workspace = true }
-quickcheck = { workspace = true, optional = true }
 
 [dev-dependencies]
-rand_isaac = "0.3.0"
-quickcheck = { workspace = true }
+rand_isaac = "0.4.0"
 
 [package.metadata.release]
 no-dev-version = true

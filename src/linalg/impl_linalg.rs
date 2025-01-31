@@ -235,7 +235,7 @@ where S: Data<Elem = A>
     /// is otherwise used for `f32, f64` for all memory layouts.
     ///
     /// ```
-    /// use ndarray::arr2;
+    /// use kn0sys_ndarray::arr2;
     ///
     /// let a = arr2(&[[1., 2.],
     ///                [0., 1.]]);

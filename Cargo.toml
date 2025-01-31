@@ -1,9 +1,8 @@
 [package]
 
-name = "ndarray"
-version = "0.16.1"
-edition = "2018"
-rust-version = "1.64"
+name = "kn0sys_ndarray"
+version = "0.17.0"
+edition = "2021"
 authors = [
   "Ulrik Sverdrup \"bluss\"",
   "Jim Turner"
@@ -11,8 +10,8 @@ authors = [
 license = "MIT OR Apache-2.0"
 readme = "README-crates.io.md"
 
-repository = "https://github.com/rust-ndarray/ndarray"
-documentation = "https://docs.rs/ndarray/"
+repository = "https://github.com/kn0sys/ndarray"
+documentation = "https://docs.rs/kn0sys-ndarray/"
 
 description = "An n-dimensional array for general elements and for numerics. Lightweight array views and slicing; views support chunking and splitting."
 
@@ -23,7 +22,7 @@ exclude = ["docgen/images/*"]
 resolver = "2"
 
 [lib]
-name = "ndarray"
+name = "kn0sys_ndarray"
 bench = false
 test = true
 
@@ -46,7 +45,6 @@ rawpointer = { version = "0.2" }
 
 [dev-dependencies]
 defmac = "0.2"
-quickcheck = { workspace = true }
 approx = { workspace = true, default-features = true }
 itertools = { workspace = true }
 ndarray-gen = { workspace = true }
@@ -95,7 +93,7 @@ default-members = [
 ]
 
 [workspace.dependencies]
-ndarray = { version = "0.16", path = ".", default-features = false }
+kn0sys_ndarray = { version = "0.17", path = ".", default-features = false }
 ndarray-rand = { path = "ndarray-rand" }
 ndarray-gen = { path = "crates/ndarray-gen" }
 
@@ -103,9 +101,8 @@ num-integer = { version = "0.1.39", default-features = false }
 num-traits = { version = "0.2", default-features = false }
 num-complex = { version = "0.4", default-features = false }
 approx = { version = "0.5", default-features = false }
-quickcheck = { version = "1.0", default-features = false }
-rand = { version = "0.8.0", features = ["small_rng"] }
-rand_distr = { version = "0.4.0" }
+rand = { version = "0.9.0", features = ["small_rng"] }
+rand_distr = { version = "0.5.0" }
 itertools = { version = "0.13.0", default-features = false, features = ["use_std"] }
 cblas-sys = { version = "0.1.4", default-features = false }
 

@@ -1,5 +1,5 @@
 #[cfg(feature = "std")]
-use ndarray::prelude::*;
+use kn0sys_ndarray::prelude::*;
 
 #[cfg(feature = "std")]
 fn main()

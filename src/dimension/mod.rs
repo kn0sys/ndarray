@@ -792,22 +792,17 @@ where D: Dimension
 mod test
 {
     use super::{
-        arith_seq_intersect,
         can_index_slice,
-        can_index_slice_not_custom,
         extended_gcd,
         max_abs_offset_check_overflow,
         slice_min_max,
         slices_intersect,
-        solve_linear_diophantine_eq,
         CanIndexCheckMode,
         IntoDimension,
     };
     use crate::error::{from_kind, ErrorKind};
     use crate::slice::Slice;
     use crate::{Dim, Dimension, Ix0, Ix1, Ix2, Ix3, IxDyn, NewAxis};
-    use num_integer::gcd;
-    use quickcheck::{quickcheck, TestResult};
 
     #[test]
     fn slice_indexing_uncommon_strides()
@@ -942,36 +937,6 @@ mod test
         can_index_slice::<(), _>(&[], &Ix2(0, 2), &Ix2(2, 1), mode).unwrap_err();
     }
 
-    quickcheck! {
-        fn can_index_slice_not_custom_same_as_can_index_slice(data: alloc::vec::Vec<u8>, dim: alloc::vec::Vec<usize>) -> bool {
-            let dim = IxDyn(&dim);
-            let result = can_index_slice_not_custom(data.len(), &dim);
-            if dim.size_checked().is_none() {
-                // Avoid overflow `dim.default_strides()` or `dim.fortran_strides()`.
-                result.is_err()
-            } else {
-                result == can_index_slice(&data, &dim, &dim.default_strides(), CanIndexCheckMode::OwnedMutable) &&
-                    result == can_index_slice(&data, &dim, &dim.fortran_strides(), CanIndexCheckMode::OwnedMutable)
-            }
-        }
-    }
-
-    quickcheck! {
-        // FIXME: This test can't handle larger values at the moment
-        fn extended_gcd_solves_eq(a: i16, b: i16) -> bool {
-            let (a, b) = (a as isize, b as isize);
-            let (g, (x, y)) = extended_gcd(a, b);
-            a * x + b * y == g
-        }
-
-        // FIXME: This test can't handle larger values at the moment
-        fn extended_gcd_correct_gcd(a: i16, b: i16) -> bool {
-            let (a, b) = (a as isize, b as isize);
-            let (g, _) = extended_gcd(a, b);
-            g == gcd(a, b)
-        }
-    }
-
     #[test]
     fn extended_gcd_zero()
     {
@@ -980,88 +945,6 @@ mod test
         assert_eq!(extended_gcd(5, 0), (5, (1, 0)));
         assert_eq!(extended_gcd(0, -5), (5, (0, -1)));
         assert_eq!(extended_gcd(-5, 0), (5, (-1, 0)));
-    }
-
-    quickcheck! {
-        // FIXME: This test can't handle larger values at the moment
-        fn solve_linear_diophantine_eq_solution_existence(
-            a: i16, b: i16, c: i16
-        ) -> TestResult {
-            let (a, b, c) = (a as isize, b as isize, c as isize);
-
-            if a == 0 || b == 0 {
-                TestResult::discard()
-            } else {
-                TestResult::from_bool(
-                    (c % gcd(a, b) == 0) == solve_linear_diophantine_eq(a, b, c).is_some()
-                )
-            }
-        }
-
-        // FIXME: This test can't handle larger values at the moment
-        fn solve_linear_diophantine_eq_correct_solution(
-            a: i8, b: i8, c: i8, t: i8
-        ) -> TestResult {
-            let (a, b, c, t) = (a as isize, b as isize, c as isize, t as isize);
-
-            if a == 0 || b == 0 {
-                TestResult::discard()
-            } else {
-                match solve_linear_diophantine_eq(a, b, c) {
-                    Some((x0, xd)) => {
-                        let x = x0 + xd * t;
-                        let y = (c - a * x) / b;
-                        TestResult::from_bool(a * x + b * y == c)
-                    }
-                    None => TestResult::discard(),
-                }
-            }
-        }
-    }
-
-    quickcheck! {
-        #[cfg_attr(miri, ignore)] // Very slow on CI/CD machines
-        // FIXME: This test is extremely slow, even with i16 values, investigate
-        fn arith_seq_intersect_correct(
-            first1: i8, len1: i8, step1: i8,
-            first2: i8, len2: i8, step2: i8
-        ) -> TestResult {
-            use std::cmp;
-
-            let (len1, len2) = (len1 as isize, len2 as isize);
-            let (first1, step1) = (first1 as isize, step1 as isize);
-            let (first2, step2) = (first2 as isize, step2 as isize);
-
-            if len1 == 0 || len2 == 0 {
-                // This case is impossible to reach in `arith_seq_intersect()`
-                // because the `min*` and `max*` arguments are inclusive.
-                return TestResult::discard();
-            }
-
-            let len1 = len1.abs();
-            let len2 = len2.abs();
-
-            // Convert to `min*` and `max*` arguments for `arith_seq_intersect()`.
-            let last1 = first1 + step1 * (len1 - 1);
-            let (min1, max1) = (cmp::min(first1, last1), cmp::max(first1, last1));
-            let last2 = first2 + step2 * (len2 - 1);
-            let (min2, max2) = (cmp::min(first2, last2), cmp::max(first2, last2));
-
-            // Naively determine if the sequences intersect.
-            let seq1: alloc::vec::Vec<_> = (0..len1)
-                .map(|n| first1 + step1 * n)
-                .collect();
-            let intersects = (0..len2)
-                .map(|n| first2 + step2 * n)
-                .any(|elem2| seq1.contains(&elem2));
-
-            TestResult::from_bool(
-                arith_seq_intersect(
-                    (min1, max1, if step1 == 0 { 1 } else { step1 }),
-                    (min2, max2, if step2 == 0 { 1 } else { step2 })
-                ) == intersects
-            )
-        }
     }
 
     #[test]

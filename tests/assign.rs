@@ -1,4 +1,4 @@
-use ndarray::prelude::*;
+use kn0sys_ndarray::prelude::*;
 
 use std::sync::atomic::{AtomicUsize, Ordering};
 

@@ -4,7 +4,7 @@
 )]
 
 use approx::assert_abs_diff_eq;
-use ndarray::{arr0, arr1, arr2, array, aview1, Array, Array1, Array2, Array3, Axis};
+use kn0sys_ndarray::{arr0, arr1, arr2, array, aview1, Array, Array1, Array2, Array3, Axis};
 use std::f64;
 
 #[test]
@@ -166,7 +166,7 @@ fn std_empty_arr()
 #[cfg(feature = "std")]
 fn var_axis()
 {
-    use ndarray::{aview0, aview2};
+    use kn0sys_ndarray::{aview0, aview2};
 
     let a = array![
         [
@@ -226,7 +226,7 @@ fn var_axis()
 #[cfg(feature = "std")]
 fn std_axis()
 {
-    use ndarray::aview2;
+    use kn0sys_ndarray::aview2;
 
     let a = array![
         [

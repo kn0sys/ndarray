@@ -21,7 +21,7 @@ where D: Dimension
     ///
     /// **Examples:**
     /// ```rust
-    /// # use ndarray::prelude::*;
+    /// # use kn0sys_ndarray::prelude::*;
     /// let a = aview2(&[[0, 1, 2, 3],
     ///                  [4, 5, 6, 7],
     ///                  [8, 9, 0, 1]]);
@@ -49,7 +49,7 @@ where D: Dimension
     /// This produces views v1 and v2 of shapes 2 × 4 and 1 × 4:
     ///
     /// ```rust
-    /// # use ndarray::prelude::*;
+    /// # use kn0sys_ndarray::prelude::*;
     /// # let a = aview2(&[[0; 4]; 3]);
     /// let (v1, v2) = a.split_at(Axis(0), 2);
     /// ```
@@ -70,7 +70,7 @@ where D: Dimension
     /// This produces views u1 and u2 of shapes 3 × 2 and 3 × 2:
     ///
     /// ```rust
-    /// # use ndarray::prelude::*;
+    /// # use kn0sys_ndarray::prelude::*;
     /// # let a = aview2(&[[0; 4]; 3]);
     /// let (u1, u2) = a.split_at(Axis(1), 2);
     ///
@@ -105,7 +105,7 @@ where D: Dimension
     /// elements.
     ///
     /// ```
-    /// use ndarray::prelude::*;
+    /// use kn0sys_ndarray::prelude::*;
     /// use num_complex::{Complex, Complex64};
     ///
     /// let arr = array![
@@ -179,7 +179,7 @@ where D: Dimension
     /// elements.
     ///
     /// ```
-    /// use ndarray::prelude::*;
+    /// use kn0sys_ndarray::prelude::*;
     /// use num_complex::{Complex, Complex64};
     ///
     /// let mut arr = array![

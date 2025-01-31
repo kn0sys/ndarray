@@ -25,7 +25,7 @@ where
     /// Return the sum of all elements in the array.
     ///
     /// ```
-    /// use ndarray::arr2;
+    /// use kn0sys_ndarray::arr2;
     ///
     /// let a = arr2(&[[1., 2.],
     ///                [3., 4.]]);
@@ -76,7 +76,7 @@ where
     /// Return the product of all elements in the array.
     ///
     /// ```
-    /// use ndarray::arr2;
+    /// use kn0sys_ndarray::arr2;
     ///
     /// let a = arr2(&[[1., 2.],
     ///                [3., 4.]]);
@@ -131,7 +131,7 @@ where
     /// # Example
     ///
     /// ```
-    /// use ndarray::array;
+    /// use kn0sys_ndarray::array;
     /// use approx::assert_abs_diff_eq;
     ///
     /// let a = array![1., -4.32, 1.14, 0.32];
@@ -196,7 +196,7 @@ where
     /// # Example
     ///
     /// ```
-    /// use ndarray::array;
+    /// use kn0sys_ndarray::array;
     /// use approx::assert_abs_diff_eq;
     ///
     /// let a = array![1., -4.32, 1.14, 0.32];
@@ -214,7 +214,7 @@ where
     /// Return sum along `axis`.
     ///
     /// ```
-    /// use ndarray::{aview0, aview1, arr2, Axis};
+    /// use kn0sys_ndarray::{aview0, aview1, arr2, Axis};
     ///
     /// let a = arr2(&[[1., 2., 3.],
     ///                [4., 5., 6.]]);
@@ -250,7 +250,7 @@ where
     /// The product of an empty array is 1.
     ///
     /// ```
-    /// use ndarray::{aview0, aview1, arr2, Axis};
+    /// use kn0sys_ndarray::{aview0, aview1, arr2, Axis};
     ///
     /// let a = arr2(&[[1., 2., 3.],
     ///                [4., 5., 6.]]);
@@ -290,7 +290,7 @@ where
     /// fails for the axis length.
     ///
     /// ```
-    /// use ndarray::{aview0, aview1, arr2, Axis};
+    /// use kn0sys_ndarray::{aview0, aview1, arr2, Axis};
     ///
     /// let a = arr2(&[[1., 2., 3.],
     ///                [4., 5., 6.]]);
@@ -351,7 +351,7 @@ where
     /// # Example
     ///
     /// ```
-    /// use ndarray::{aview1, arr2, Axis};
+    /// use kn0sys_ndarray::{aview1, arr2, Axis};
     ///
     /// let a = arr2(&[[1., 2.],
     ///                [3., 4.],
@@ -421,7 +421,7 @@ where
     /// # Example
     ///
     /// ```
-    /// use ndarray::{aview1, arr2, Axis};
+    /// use kn0sys_ndarray::{aview1, arr2, Axis};
     ///
     /// let a = arr2(&[[1., 2.],
     ///                [3., 4.],
@@ -444,7 +444,7 @@ where
     ///
     /// For `n>=2`, the process is iterated:
     /// ```
-    /// use ndarray::{array, Axis};
+    /// use kn0sys_ndarray::{array, Axis};
     /// let arr = array![1.0, 2.0, 5.0];
     /// assert_eq!(arr.diff(2, Axis(0)), arr.diff(1, Axis(0)).diff(1, Axis(0)))
     /// ```
@@ -452,7 +452,7 @@ where
     ///
     /// **Panics** if `n` is too big / the array is to short:
     /// ```should_panic
-    /// use ndarray::{array, Axis};
+    /// use kn0sys_ndarray::{array, Axis};
     /// array![1.0, 2.0, 3.0].diff(10, Axis(0));
     /// ```
     pub fn diff(&self, n: usize, axis: Axis) -> Array<A, D>

@@ -25,9 +25,9 @@ where D: Dimension
     /// length, returning an `Err` if not compatible.
     ///
     /// ```
-    /// use ndarray::ArrayView;
-    /// use ndarray::arr3;
-    /// use ndarray::ShapeBuilder;
+    /// use kn0sys_ndarray::ArrayView;
+    /// use kn0sys_ndarray::arr3;
+    /// use kn0sys_ndarray::ShapeBuilder;
     ///
     /// // advanced example where we are even specifying exact strides to use (which is optional).
     /// let s = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -128,9 +128,9 @@ where D: Dimension
     /// length, returning an `Err` if not compatible.
     ///
     /// ```
-    /// use ndarray::ArrayViewMut;
-    /// use ndarray::arr3;
-    /// use ndarray::ShapeBuilder;
+    /// use kn0sys_ndarray::ArrayViewMut;
+    /// use kn0sys_ndarray::arr3;
+    /// use kn0sys_ndarray::ShapeBuilder;
     ///
     /// let mut s = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     /// let mut a = ArrayViewMut::from_shape((2, 3, 2).strides((1, 4, 2)),

@@ -112,7 +112,7 @@ where
     /// shape and dimensionality.
     ///
     /// ```
-    /// use ndarray::Array;
+    /// use kn0sys_ndarray::Array;
     ///
     /// let a = Array::from_elem((2, 3), 5.);
     ///
@@ -134,7 +134,7 @@ where
     /// [`.raw_dim()`](ArrayBase::raw_dim) instead:
     ///
     /// ```rust
-    /// use ndarray::{Array, Array2};
+    /// use kn0sys_ndarray::{Array, Array2};
     ///
     /// let a = Array2::<i32>::zeros((3, 4));
     /// let shape = a.shape();
@@ -213,7 +213,7 @@ where
     /// standard layout:
     ///
     /// ```
-    /// # use ndarray::prelude::*;
+    /// # use kn0sys_ndarray::prelude::*;
     /// # let arr = Array::from_shape_vec((2, 2).f(), vec![1, 2, 3, 4]).unwrap();
     /// # let owned = {
     /// Array::from_shape_vec(arr.raw_dim(), arr.iter().cloned().collect()).unwrap()
@@ -225,7 +225,7 @@ where
     /// or this for a result in column-major (Fortran) layout:
     ///
     /// ```
-    /// # use ndarray::prelude::*;
+    /// # use kn0sys_ndarray::prelude::*;
     /// # let arr = Array::from_shape_vec((2, 2), vec![1, 2, 3, 4]).unwrap();
     /// # let owned = {
     /// Array::from_shape_vec(arr.raw_dim().f(), arr.t().iter().cloned().collect()).unwrap()
@@ -269,7 +269,7 @@ where
     /// cloning the array elements. Otherwise, returns `self` unchanged.
     ///
     /// ```
-    /// use ndarray::{array, rcarr2, ArcArray2, Array2};
+    /// use kn0sys_ndarray::{array, rcarr2, ArcArray2, Array2};
     ///
     /// // Reference-counted, clone-on-write `ArcArray`.
     /// let a: ArcArray2<_> = rcarr2(&[[1., 2.], [3., 4.]]);
@@ -312,7 +312,7 @@ where
     /// # Example
     ///
     /// ```rust
-    /// use ndarray::Array3;
+    /// use kn0sys_ndarray::Array3;
     ///
     /// let mut a = Array3::<f64>::zeros([3, 4, 2]);
     /// a[[0, 0, 0]] = 42.;
@@ -337,7 +337,7 @@ where
     /// # Example
     ///
     /// ```rust
-    /// use ndarray::Array3;
+    /// use kn0sys_ndarray::Array3;
     ///
     /// let mut a = Array3::<f64>::zeros([3, 4, 2]);
     /// *a.first_mut().unwrap() = 42.;
@@ -362,7 +362,7 @@ where
     /// # Example
     ///
     /// ```rust
-    /// use ndarray::Array3;
+    /// use kn0sys_ndarray::Array3;
     ///
     /// let mut a = Array3::<f64>::zeros([3, 4, 2]);
     /// a[[2, 3, 1]] = 42.;
@@ -391,7 +391,7 @@ where
     /// # Example
     ///
     /// ```rust
-    /// use ndarray::Array3;
+    /// use kn0sys_ndarray::Array3;
     ///
     /// let mut a = Array3::<f64>::zeros([3, 4, 2]);
     /// *a.last_mut().unwrap() = 42.;
@@ -513,7 +513,7 @@ where
     /// # Example
     ///
     /// ```
-    /// use ndarray::{arr2, s};
+    /// use kn0sys_ndarray::{arr2, s};
     ///
     /// let mut a = arr2(&[[1, 2, 3], [4, 5, 6]]);
     /// let (mut edges, mut middle) = a.multi_slice_mut((s![.., ..;2], s![.., 1]));
@@ -750,7 +750,7 @@ where
     /// Arrays also support indexing syntax: `array[index]`.
     ///
     /// ```
-    /// use ndarray::arr2;
+    /// use kn0sys_ndarray::arr2;
     ///
     /// let a = arr2(&[[1., 2.],
     ///                [3., 4.]]);
@@ -774,7 +774,7 @@ where
     /// if the index is out of bounds.
     ///
     /// ```
-    /// use ndarray::arr2;
+    /// use kn0sys_ndarray::arr2;
     ///
     /// let a = arr2(&[[1., 2.], [3., 4.]]);
     ///
@@ -806,7 +806,7 @@ where
     /// if the index is out of bounds.
     ///
     /// ```
-    /// use ndarray::arr2;
+    /// use kn0sys_ndarray::arr2;
     ///
     /// let mut a = arr2(&[[1., 2.], [3., 4.]]);
     ///
@@ -947,7 +947,7 @@ where
     /// **Panics** if `axis` or `index` is out of bounds.
     ///
     /// ```
-    /// use ndarray::{arr2, ArrayView, Axis};
+    /// use kn0sys_ndarray::{arr2, ArrayView, Axis};
     ///
     /// let a = arr2(&[[1., 2. ],    // ... axis 0, row 0
     ///                [3., 4. ],    // --- axis 0, row 1
@@ -975,7 +975,7 @@ where
     /// **Panics** if `axis` or `index` is out of bounds.
     ///
     /// ```
-    /// use ndarray::{arr2, aview2, Axis};
+    /// use kn0sys_ndarray::{arr2, aview2, Axis};
     ///
     /// let mut a = arr2(&[[1., 2. ],
     ///                    [3., 4. ]]);
@@ -1035,7 +1035,7 @@ where
     /// **Panics** if `axis` or an element of `indices` is out of bounds.
     ///
     /// ```
-    /// use ndarray::{arr2, Axis};
+    /// use kn0sys_ndarray::{arr2, Axis};
     ///
     /// let x = arr2(&[[0., 1.],
     ///                [2., 3.],
@@ -1103,7 +1103,7 @@ where
     /// Iterator element is `ArrayView1<A>` (1D array view).
     ///
     /// ```
-    /// use ndarray::arr3;
+    /// use kn0sys_ndarray::arr3;
     ///
     /// let a = arr3(&[[[ 0,  1,  2],    // -- row 0, 0
     ///                 [ 3,  4,  5]],   // -- row 0, 1
@@ -1153,7 +1153,7 @@ where
     /// Iterator element is `ArrayView1<A>` (1D array view).
     ///
     /// ```
-    /// use ndarray::arr3;
+    /// use kn0sys_ndarray::arr3;
     ///
     /// // The generalized columns of a 3D array:
     /// // are directed along the 0th axis: 0 and 6, 1 and 7 and so on...
@@ -1191,7 +1191,7 @@ where
     /// Iterator element is `ArrayView1<A>` (1D array view).
     ///
     /// ```
-    /// use ndarray::{arr3, aview1, Axis};
+    /// use kn0sys_ndarray::{arr3, aview1, Axis};
     ///
     /// let a = arr3(&[[[ 0,  1,  2],
     ///                 [ 3,  4,  5]],
@@ -1306,8 +1306,8 @@ where
     /// **Panics** if `axis` is out of bounds or if `size` is zero.
     ///
     /// ```
-    /// use ndarray::Array;
-    /// use ndarray::{arr3, Axis};
+    /// use kn0sys_ndarray::Array;
+    /// use kn0sys_ndarray::{arr3, Axis};
     ///
     /// let a = Array::from_iter(0..28).into_shape_with_order((2, 7, 2)).unwrap();
     /// let mut iter = a.axis_chunks_iter(Axis(1), 2);
@@ -1374,8 +1374,8 @@ where
     /// number of array axes.)
     ///
     /// ```rust
-    /// use ndarray::Array;
-    /// use ndarray::arr2;
+    /// use kn0sys_ndarray::Array;
+    /// use kn0sys_ndarray::arr2;
     /// let mut a = Array::zeros((6, 7));
     ///
     /// // Fill each 2 × 2 chunk with the index of where it appeared in iteration
@@ -1478,7 +1478,7 @@ where
     /// **Panics** if `axis` is out-of-bounds or if `window_size` is zero.
     ///
     /// ```
-    /// use ndarray::{Array3, Axis, s};
+    /// use kn0sys_ndarray::{Array3, Axis, s};
     ///
     /// let arr = Array3::from_shape_fn([4, 5, 2], |(i, j, k)| i * 100 + j * 10 + k);
     /// let correct = vec![
@@ -1592,7 +1592,7 @@ where
     /// owns the cloned data.
     ///
     /// ```
-    /// use ndarray::Array2;
+    /// use kn0sys_ndarray::Array2;
     ///
     /// let standard = Array2::<f64>::zeros((3, 4));
     /// assert!(standard.is_standard_layout());
@@ -1798,8 +1798,8 @@ where
     /// # Example
     ///
     /// ```
-    /// use ndarray::array;
-    /// use ndarray::Order;
+    /// use kn0sys_ndarray::array;
+    /// use kn0sys_ndarray::Order;
     ///
     /// assert!(
     ///     array![1., 2., 3., 4., 5., 6.].to_shape(((2, 3), Order::RowMajor)).unwrap()
@@ -1892,8 +1892,8 @@ where
     /// # Example
     ///
     /// ```
-    /// use ndarray::{aview1, aview2};
-    /// use ndarray::Order;
+    /// use kn0sys_ndarray::{aview1, aview2};
+    /// use kn0sys_ndarray::Order;
     ///
     /// assert!(
     ///     aview1(&[1., 2., 3., 4.]).into_shape_with_order((2, 2)).unwrap()
@@ -1950,7 +1950,7 @@ where
     /// **Errors** if the input array is not c- or f-contiguous.
     ///
     /// ```
-    /// use ndarray::{aview1, aview2};
+    /// use kn0sys_ndarray::{aview1, aview2};
     ///
     /// assert!(
     ///     aview1(&[1., 2., 3., 4.]).into_shape((2, 2)).unwrap()
@@ -2058,7 +2058,7 @@ where
     /// of the array is handled. See [`.to_shape()`].*
     ///
     /// ```
-    /// use ndarray::{rcarr1, rcarr2};
+    /// use kn0sys_ndarray::{rcarr1, rcarr2};
     ///
     /// assert!(
     ///     rcarr1(&[1., 2., 3., 4.]).reshape((2, 2))
@@ -2098,7 +2098,7 @@ where
     /// The array is returned as a `CowArray`; a view if possible, otherwise an owned array.
     ///
     /// ```
-    /// use ndarray::{arr1, arr3};
+    /// use kn0sys_ndarray::{arr1, arr3};
     ///
     /// let array = arr3(&[[[1, 2], [3, 4]], [[5, 6], [7, 8]]]);
     /// let flattened = array.flatten();
@@ -2118,8 +2118,8 @@ where
     /// The array is returned as a `CowArray`; a view if possible, otherwise an owned array.
     ///
     /// ```
-    /// use ndarray::{arr1, arr2};
-    /// use ndarray::Order;
+    /// use kn0sys_ndarray::{arr1, arr2};
+    /// use kn0sys_ndarray::Order;
     ///
     /// let array = arr2(&[[1, 2], [3, 4], [5, 6], [7, 8]]);
     /// let flattened = array.flatten_with_order(Order::RowMajor);
@@ -2141,7 +2141,7 @@ where
     /// Otherwise, a new array is allocated and the elements are copied.
     ///
     /// ```
-    /// use ndarray::{arr1, arr3};
+    /// use kn0sys_ndarray::{arr1, arr3};
     ///
     /// let array = arr3(&[[[1, 2], [3, 4]], [[5, 6], [7, 8]]]);
     /// let flattened = array.into_flat();
@@ -2160,7 +2160,7 @@ where
     /// array view (respectively).
     ///
     /// ```
-    /// use ndarray::{arr2, ArrayD};
+    /// use kn0sys_ndarray::{arr2, ArrayD};
     ///
     /// let array: ArrayD<i32> = arr2(&[[1, 2],
     ///                                 [3, 4]]).into_dyn();
@@ -2180,7 +2180,7 @@ where
     /// the `into_dyn` method).
     ///
     /// ```
-    /// use ndarray::{ArrayD, Ix2, IxDyn};
+    /// use kn0sys_ndarray::{ArrayD, Ix2, IxDyn};
     ///
     /// // Create a dynamic dimensionality array and convert it to an Array2
     /// // (Ix2 dimension type).
@@ -2233,7 +2233,7 @@ where
     /// The broadcasting documentation for Numpy has more information.
     ///
     /// ```
-    /// use ndarray::{aview1, aview2};
+    /// use kn0sys_ndarray::{aview1, aview2};
     ///
     /// assert!(
     ///     aview1(&[1., 0.]).broadcast((10, 2)).unwrap()
@@ -2351,7 +2351,7 @@ where
     /// **Panics** if the axes are out of bounds.
     ///
     /// ```
-    /// use ndarray::arr2;
+    /// use kn0sys_ndarray::arr2;
     ///
     /// let mut a = arr2(&[[1., 2., 3.]]);
     /// a.swap_axes(0, 1);
@@ -2380,7 +2380,7 @@ where
     /// # Examples
     ///
     /// ```
-    /// use ndarray::{arr2, Array3};
+    /// use kn0sys_ndarray::{arr2, Array3};
     ///
     /// let a = arr2(&[[0, 1], [2, 3]]);
     /// assert_eq!(a.view().permuted_axes([1, 0]), a.t());
@@ -2500,8 +2500,8 @@ where
     /// `take`, and vice versa.
     ///
     /// ```
-    /// use ndarray::Array3;
-    /// use ndarray::Axis;
+    /// use kn0sys_ndarray::Array3;
+    /// use kn0sys_ndarray::Axis;
     ///
     /// let mut a = Array3::<f64>::zeros((2, 3, 4));
     /// assert!(a.merge_axes(Axis(1), Axis(2)));
@@ -2518,7 +2518,7 @@ where
     /// Insert new array axis at `axis` and return the result.
     ///
     /// ```
-    /// use ndarray::{Array3, Axis, arr1, arr2};
+    /// use kn0sys_ndarray::{Array3, Axis, arr1, arr2};
     ///
     /// // Convert a 1-D array into a row vector (2-D).
     /// let a = arr1(&[1, 2, 3]);
@@ -2712,7 +2712,7 @@ where
     /// Return an array with the same shape as `self`.
     ///
     /// ```
-    /// use ndarray::arr2;
+    /// use kn0sys_ndarray::arr2;
     ///
     /// let a = arr2(&[[ 0., 1.],
     ///                [-1., 2.]]);
@@ -2771,7 +2771,7 @@ where
     /// Return an array with the same shape as `self`.
     ///
     /// ```
-    /// use ndarray::arr2;
+    /// use kn0sys_ndarray::arr2;
     ///
     /// let a = arr2(&[[ 0., 1.],
     ///                [-1., 2.]]);
@@ -2872,7 +2872,7 @@ where
     /// ```
     /// # #[cfg(feature = "approx")] {
     /// use approx::assert_abs_diff_eq;
-    /// use ndarray::arr2;
+    /// use kn0sys_ndarray::arr2;
     ///
     /// let mut a = arr2(&[[ 0., 1.],
     ///                    [-1., 2.]]);
@@ -3015,7 +3015,7 @@ where
     /// axis:
     ///
     /// ```
-    /// use ndarray::{array, Axis};
+    /// use kn0sys_ndarray::{array, Axis};
     ///
     /// let mut arr = array![
     ///     [[1, 2], [3, 4], [5, 6]],

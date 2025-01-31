@@ -1,4 +1,4 @@
-use ndarray::prelude::*;
+use kn0sys_ndarray::prelude::*;
 
 fn into_raw_vec_capacity<T, D: Dimension>(a: Array<T, D>) -> usize
 {
