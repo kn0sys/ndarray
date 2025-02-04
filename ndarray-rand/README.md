@@ -41,7 +41,7 @@ necessary trait).
 Recent changes
 ==============
 
-Check _[RELEASES.md](https://github.com/rust-ndarray/ndarray/blob/master/ndarray-rand/RELEASES.md)_ to see 
+Check _[RELEASES.md](https://github.com/kn0sys/ndarray/blob/master/ndarray-rand/RELEASES.md)_ to see 
 the changes introduced in previous releases.
 
 

@@ -2,7 +2,7 @@
 name = "kn0sys_ndarray_rand"
 version = "0.16.0"
 edition = "2021"
-authors = ["bluss"]
+authors = ["bluss", "n12"]
 license = "MIT OR Apache-2.0"
 
 repository = "https://github.com/kn0sys/ndarray"

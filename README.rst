@@ -9,16 +9,6 @@ or take a look at the `quickstart tutorial <./README-quick-start.md>`_.
 
 __ https://docs.rs/ndarray/
 
-|build_status|_ |crates|_ 
-
-.. |build_status| image:: https://github.com/rust-ndarray/ndarray/actions/workflows/ci.yaml/badge.svg
-   :alt: CI build status
-.. _build_status: https://github.com/kn0sys/ndarray/actions
-
-.. |crates| image:: https://img.shields.io/crates/v/ndarray.svg
-   :alt: ndarray at crates.io
-.. _crates: https://crates.io/crates/kn0sys-ndarray
-
 
 Highlights
 ----------
@@ -120,7 +110,7 @@ An example configuration using system openblas is shown below. Note that only
 end-user projects (not libraries) should select provider::
 
     [dependencies]
-    ndarray = { version = "0.16.0", features = ["blas"] }
+    kn0sys_ndarray = { version = "0.17.0", features = ["blas"] }
     blas-src = { version = "0.10", features = ["openblas"] }
     openblas-src = { version = "0.10", features = ["cblas", "system"] }
 
@@ -128,7 +118,7 @@ Using system-installed dependencies can save a long time building dependencies.
 An example configuration using (compiled) netlib is shown below anyway::
 
     [dependencies]
-    ndarray = { version = "0.16.0", features = ["blas"] }
+    kn0sys_ndarray = { version = "0.17.0", features = ["blas"] }
     blas-src = { version = "0.10.0", default-features = false, features = ["netlib"] }
 
 When this is done, your program must also link to ``blas_src`` by using it or
