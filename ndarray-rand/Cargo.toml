@@ -1,16 +1,14 @@
 [package]
 name = "kn0sys_ndarray_rand"
-version = "0.16.0"
+version = "0.16.1"
 edition = "2021"
 authors = ["bluss", "n12"]
 license = "MIT OR Apache-2.0"
-
 repository = "https://github.com/kn0sys/ndarray"
 documentation = "https://docs.rs/kn0sys-ndarray-rand/"
 readme = "README.md"
-
+categories = ["data-structures", "science"]
 description = "Constructors for randomized arrays. `rand` integration for `ndarray`."
-
 keywords = ["multidimensional", "matrix", "rand", "ndarray"]
 
 [dependencies]
