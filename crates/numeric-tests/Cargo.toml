@@ -2,7 +2,7 @@
 name = "numeric-tests"
 version = "0.1.0"
 authors = ["bluss", "n12n"]
-publish = false
+publish = true
 edition = "2018"
 
 [lib]
@@ -12,7 +12,7 @@ doctest = false
 
 [dependencies]
 kn0sys_ndarray = { workspace = true, features = ["approx"] }
-kn0sys_ndarray_rand = { workspace = true }
+kn0sys_ndarray_rand = { version = "0.16.1" }
 
 approx = { workspace = true }
 rand = { workspace = true }

@@ -62,7 +62,7 @@ version = "0.1.0"
 dependencies = [
  "cblas-sys",
  "itertools",
- "kn0sys_ndarray",
+ "kn0sys_ndarray 0.17.2",
  "ndarray-gen",
 ]
 
@@ -86,7 +86,7 @@ dependencies = [
  "blis-src",
  "defmac",
  "itertools",
- "kn0sys_ndarray",
+ "kn0sys_ndarray 0.17.2",
  "ndarray-gen",
  "netlib-src",
  "num-complex",
@@ -379,6 +379,21 @@ checksum = "4a5f13b858c8d314ee3e8f639011f7ccefe71f97f96e50151fb991f267928e2c"
 
 [[package]]
 name = "kn0sys_ndarray"
+version = "0.17.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a8b01a33867c748578c7de2d7ce440f9173637e3791d1fbe70fb74a023d3648c"
+dependencies = [
+ "matrixmultiply",
+ "num-complex",
+ "num-integer",
+ "num-traits",
+ "portable-atomic",
+ "portable-atomic-util",
+ "rawpointer",
+]
+
+[[package]]
+name = "kn0sys_ndarray"
 version = "0.17.2"
 dependencies = [
  "approx",
@@ -401,8 +416,19 @@ dependencies = [
 [[package]]
 name = "kn0sys_ndarray_rand"
 version = "0.16.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d24e3dbcba8efeb08ee8781c5b27c009b2a3e4a22e71508f722836b8eb2f4b69"
 dependencies = [
- "kn0sys_ndarray",
+ "kn0sys_ndarray 0.17.1",
+ "rand",
+ "rand_distr",
+]
+
+[[package]]
+name = "kn0sys_ndarray_rand"
+version = "0.17.1"
+dependencies = [
+ "kn0sys_ndarray 0.17.2",
  "rand",
  "rand_distr",
  "rand_isaac",
@@ -493,7 +519,7 @@ dependencies = [
 name = "ndarray-gen"
 version = "0.1.0"
 dependencies = [
- "kn0sys_ndarray",
+ "kn0sys_ndarray 0.17.2",
  "num-traits",
 ]
 
@@ -550,8 +576,8 @@ version = "0.1.0"
 dependencies = [
  "approx",
  "blas-src",
- "kn0sys_ndarray",
- "kn0sys_ndarray_rand",
+ "kn0sys_ndarray 0.17.2",
+ "kn0sys_ndarray_rand 0.16.1",
  "num-complex",
  "num-traits",
  "openblas-src",
@@ -955,7 +981,7 @@ dependencies = [
 name = "serialization-tests"
 version = "0.1.0"
 dependencies = [
- "kn0sys_ndarray",
+ "kn0sys_ndarray 0.17.2",
  "rmp",
  "rmp-serde",
  "ron",
